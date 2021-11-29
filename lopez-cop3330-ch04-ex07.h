@@ -4,22 +4,23 @@
  */
 
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::string operand1; //declare a string for the user's first operand, either numerical or written-out
+    string operand1; //declare a string for the user's first operand, either numerical or written-out
     double operand1Num; //declare a double to hold the numerical version of the first operand
-    std::string operand2; //declare a string for the user's second operand, either numerical or written-out
+    string operand2; //declare a string for the user's second operand, either numerical or written-out
     double operand2Num; //declare a double to hold the numerical version of the first operand
-    std::string operation; //declare a string for the user's operator/operation
+    string operation; //declare a string for the user's operator/operation
     int validFlag = 0; //declare an integer to ensure that the operands and operator are valid, initializing it as false
 
     while(validFlag == 0){ //while the flag is false
 
         //tell the user to input an operand to complete the operation with
-        std::cout << "Please input an operand (i.e., between 0 and 9).\n";
+        cout << "Please input an operand (i.e., between 0 and 9).\n";
 
         //take the user's first inputted value
-        std::cin >> operand1;
+        cin >> operand1;
 
         if((operand1 == "0") || (operand1 == "zero")) { //if the first operand is 0, numerical or written-out
             operand1Num = 0; //then the first operand is 0
@@ -64,7 +65,7 @@ int main() {
         else {
             validFlag = 0; //flag the value as invalid
             //tell the user to input a valid operand to complete the operation with
-            std::cout << "That operand is not valid.\n";
+            cout << "That operand is not valid.\n";
         }
 
     }
@@ -74,10 +75,10 @@ int main() {
     while(validFlag == 0) { //while the flag is false
 
         //tell the user to input an operand to complete the operation with
-        std::cout << "Please input another operand (i.e., between 0 and 9).\n";
+        cout << "Please input another operand (i.e., between 0 and 9).\n";
 
         //take the user's second inputted value
-        std::cin >> operand2;
+        cin >> operand2;
 
         if((operand2 == "0") || (operand2 == "zero")) { //if the second operand is 0, numerical or written-out
             operand2Num = 0; //then the second operand is 0
@@ -122,7 +123,7 @@ int main() {
         else {
             validFlag = 0; //flag the value as invalid
             //tell the user to input a valid operand to complete the operation with
-            std::cout << "That operand is not valid.\n";
+            cout << "That operand is not valid.\n";
         }
     }
 
@@ -131,10 +132,10 @@ int main() {
     while(validFlag == 0) { //while the flag is false
 
         //tell the user to input an operand to complete the operation with
-        std::cout << "Please input an operator (i.e., +, -, *, or /).\n";
+        cout << "Please input an operator (i.e., +, -, *, or /).\n";
 
         //take the user's desired operation
-        std::cin >> operation;
+        cin >> operation;
 
         if((operation == "+") || (operation == "-") || (operation == "*") || (operation == "/")) {
             validFlag = 1; //flag the value as valid
@@ -142,7 +143,7 @@ int main() {
         else {
             validFlag = 0; //flag the value as invalid
             //tell the user to input a valid operator to complete the operation with
-            std::cout << "That operator is not valid.\n";
+            cout << "That operator is not valid.\n";
         }
     }
 
@@ -150,25 +151,25 @@ int main() {
         double sum = operand1Num + operand2Num; //find the sum of the operands
 
         //output the sum of the operands to the user
-        std::cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << sum << ".\n";
+        cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << sum << ".\n";
     }
     else if(operation == "-") { //if the operation is subtraction, then find the difference of the operands
         double difference = operand1Num - operand2Num; //find the difference of the operands
 
         //output the difference of the operands to the user
-        std::cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << difference << ".\n";
+        cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << difference << ".\n";
     }
     else if(operation == "*") { //if the operation is multiplication, then find the product of the operands
         double product = operand1Num * operand2Num; //find the product of the operands
 
         //output the product of the operands to the user
-        std::cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << product << ".\n";
+        cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << product << ".\n";
     }
     else if(operation == "/") { //if the operation is division, then find the quotient of the operands
         double quotient = operand1Num / operand2Num; //find the quotient of the operands
 
         //output the quotient of the operands to the user
-        std::cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << quotient << ".\n";
+        cout << "The solution to " << operand1 << " " << operation << " " << operand2 << " equals " << quotient << ".\n";
     }
 
     return 0;
